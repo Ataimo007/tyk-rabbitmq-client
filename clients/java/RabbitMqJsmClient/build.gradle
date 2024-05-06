@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url "https://packagecloud.io/rabbitmq/maven-milestones/maven2" }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation "com.rabbitmq.jms:rabbitmq-jms:3.2.0"
+    implementation "com.rabbitmq:amqp-client:5.21.0"
+
+    implementation 'org.apache.qpid:qpid-jms-client:2.5.0'
+    implementation 'org.apache.qpid:proton-j:0.34.1'
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+
+    implementation 'org.slf4j:slf4j-log4j12:2.0.13' // Use log4j binding
+//    implementation 'ch.qos.logback:logback-classic:1.5.6' // Logback implementation
+}
+
+test {
+    useJUnitPlatform()
+}

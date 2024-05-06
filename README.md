@@ -1,6 +1,6 @@
-# Tyk Pro Demo using Docker
+# Tyk Pro Demo using Docker and RabbitMQ Client Integrations
 
-## Quick start
+## Quick start Tyk and RabbitMQ
 
 **Prerequisites**
 
@@ -101,3 +101,5 @@ volumes:
    - ./certs/tyk-gateway-certificate.pem/:/opt/tyk-gateway/certs/tyk-gateway-certificate.pem
    - ./certs/tyk-gateway-private-key.pem/:/opt/tyk-gateway/certs/tyk-gateway-private-key.pem
 ```
+
+# Run your RabbitMQ Client Application through Tyk
