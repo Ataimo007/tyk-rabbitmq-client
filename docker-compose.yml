@@ -87,12 +87,17 @@ services:
 
   rabbitmq:
     image: rabbitmq:management
+    volumes:
+      - ./certs:/etc/certs
+      - ./confs/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
     environment:
       - RABBITMQ_DEFAULT_USER=ataimo@tyk.io
       - RABBITMQ_DEFAULT_PASS=alex1234.
     ports:
       # AMQP protocol port
       - '5672:5672'
+      # AMQPS protocol port
+      - '5671:5671'
       # HTTP management UI
       - '15672:15672'
     networks:

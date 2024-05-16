@@ -1,0 +1,7 @@
+[ v3_ca ]
+basicConstraints = CA:FALSE
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = rabbitmq.localhost
+DNS.2 = www.rabbitmq.localhost
